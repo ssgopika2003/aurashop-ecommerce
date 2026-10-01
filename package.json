@@ -1,8 +1,8 @@
 {
-  "name": "diya",
+  "name": "aurashop-ecommerce",
   "version": "1.0.0",
   "private": true,
-  "description": "A minimal e-commerce website.",
+  "description": "Responsive e-commerce application for handcrafted products built with Next.js, React, Tailwind CSS and Zustand.",
   "homepage": "https://apnadiya.in",
   "license": "MIT",
   "scripts": {
@@ -25,14 +25,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nandanNM/diya-ecommarce.git"
+    "url": "git+https://github.com/ssgopika2003/aurashop-ecommerce.git"
   },
   "keywords": [
-    "Diya"
+    "nextjs",
+    "react",
+    "javascript",
+    "tailwindcss",
+    "ecommerce",
+    "zustand",
+    "responsive-design",
+    "web-application"
   ],
   "author": "Nandan Manna",
   "bugs": {
-    "url": "https://github.com/nandanNM/diya-ecommarce/issues"
+    "url": "https://github.com/ssgopika2003/aurashop-ecommerce/issues"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

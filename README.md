@@ -1,99 +1,113 @@
-# 🕯️ Diya - Handcrafted Scented Candles
+# AuraShop
 
-![Diya Hero](https://ik.imagekit.io/codernandan/assets/diya-screenshot-desktop.webp)
+## Overview
 
-> **"Light a Diya, light up a memory."**
+AuraShop is a responsive e-commerce application for handcrafted products, built with Next.js, React, Tailwind CSS, and Zustand. The current storefront showcases Diya's handcrafted scented candles, with product discovery, variant selection, cart management, and online checkout.
 
-**Diya** is a premium e-commerce platform for handcrafted scented candles, made with love by engineering students. We blend tradition with modern aesthetics to bring you fragrances that evoke nostalgia, peace, and celebration.
+The live Diya storefront is available at [apnadiya.in](https://apnadiya.in). The deployed storefront retains the Diya brand; AuraShop is the name of this portfolio project.
 
----
+## Features
 
-## ✨ Features
+- Responsive storefront for desktop, tablet, and mobile screens.
+- Product collections, product details, image galleries, and selectable variants.
+- Search and product discovery flows.
+- Cart state managed with Zustand and persisted in the database for signed-in or guest sessions.
+- Product discounts and coupon support.
+- Customer authentication, saved addresses, order history, and checkout.
+- PayU payment integration and order/shipping workflows.
+- Search-engine metadata, sitemap, and robots configuration.
 
-- **🛍️ Seamless Shopping Experience**: Browse our exclusive collection of scented candles with detailed descriptions and imagery.
-- **🛒 Dynamic Cart**: Robust shopping cart management using `Zustand` with local storage persistence.
-- **💬 WhatsApp Checkout**: Direct-to-consumer checkout flow integrated with WhatsApp for a personalized purchase experience.
-- **🏷️ Smart Pricing**: Automatic discount calculation and dynamic badges for items on sale.
-- **📱 Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
-- **⚡ Fast & SEO Optimized**: Built with Next.js 14 for lightning-fast performance and SEO best practices.
+## Technology Stack
 
----
+- Next.js 16 App Router and React 19
+- TypeScript and Tailwind CSS 4
+- Shadcn UI, Radix UI, and Lucide React
+- Zustand and TanStack Query
+- PostgreSQL with Drizzle ORM
+- Better Auth, PayU, and ImageKit
 
-## 🚀 Tech Stack
+## Screenshots
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [Shadcn UI](https://ui.shadcn.com/)
-- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Images**: [ImageKit.io](https://imagekit.io/)
+Screenshots are captured from the live Diya storefront. The local development server starts without a database, but populated catalog and cart views require configured PostgreSQL services.
 
----
+| Home                                        | Product listing                                 |
+| ------------------------------------------- | ----------------------------------------------- |
+| ![AuraShop home page](screenshots/home.png) | ![Product collection](screenshots/products.png) |
 
-## 🎨 Product Showcase
+| Product details                                     | Search and filtering                                              |
+| --------------------------------------------------- | ----------------------------------------------------------------- |
+| ![Product details](screenshots/product-details.png) | ![Product search and filtering](screenshots/filtering-search.png) |
 
-Here are some of our signature creations:
+| Shopping cart                          | Mobile storefront                                      |
+| -------------------------------------- | ------------------------------------------------------ |
+| ![Shopping cart](screenshots/cart.png) | ![AuraShop on a mobile screen](screenshots/mobile.png) |
 
-| **Pahli Baarish** (Petrichor) | **Waadi** (Mountain Mist) | **Mogra** (Evening Bloom) |
-| :---: | :---: | :---: |
-| <img src="https://ik.imagekit.io/codernandan/product/pahli-baarish/pahli-baarish-s1.jpeg" width="200" /> | <img src="https://ik.imagekit.io/codernandan/product/waadi/waadi-s1.jpeg" width="200" /> | <img src="https://ik.imagekit.io/codernandan/product/mogra/mogra-s4.jpeg" width="200" /> |
-| *Bottled monsoon rain.* | *A ticket to the Himalayas.* | *The scent of an Indian summer.* |
+## Project Structure
 
-| **Lavender** (Sleep Lullaby) | **Parijaat** (Autumn Nostalgia) | **Saada** (Unscented) |
-| :---: | :---: | :---: |
-| <img src="https://ik.imagekit.io/codernandan/product/lavender/lavender-s1.jpeg" width="200" /> | <img src="https://ik.imagekit.io/codernandan/product/parijaat/parijaat-s1.jpeg" width="200" /> | <img src="https://ik.imagekit.io/codernandan/product/saada/saada-s1.jpeg" width="200" /> |
-| *Your personal "Off" button.* | *The magic of October mornings.* | *Pure light, simply you.* |
-
----
-
-## 🛠️ Getting Started
-
-Follow these steps to run the project locally:
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/your-username/diya.git
-    cd diya
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    # or
-    pnpm install
-    ```
-
-3.  **Run the development server:**
-    ```bash
-    npm run dev
-    # or
-    pnpm dev
-    ```
-
-4.  **Open in Browser:**
-    Navigate to [http://localhost:3000](http://localhost:1408) to see the application running.
-
----
-
-## 📂 Project Structure
-
-```bash
+```text
 src/
-├── app/              # Next.js App Router pages and layouts
-├── components/       # Reusable UI components (buttons, badges, etc.)
-├── features/         # Feature-specific components (cart, shop, home)
-├── data/             # Static data files (products.ts)
-├── lib/              # Utility functions and types
-├── store/            # Global state management (useCartStore)
-└── config/           # Site configuration
+  app/          App Router pages, layouts, and API routes
+  components/   Shared UI, forms, and layout components
+  config/       Store and site configuration
+  data/         Product and storefront content
+  db/           Drizzle schema, migrations, and seed data
+  features/     Home, shop, product, and cart features
+  hooks/        Cart and checkout hooks
+  lib/          API clients, actions, validation, and utilities
+  services/     Payment, shipping, and email integrations
+  types/        Shared TypeScript models
+public/         Static images, icons, and other assets
 ```
 
----
+## Installation
 
-## 👥 Authors
+### Requirements
 
-- **Diya Team** - *Handcrafting memories.*
+- Node.js 20 or 22+
+- pnpm 10.15.0 (Corepack is included with supported Node.js distributions)
+- PostgreSQL for database-backed catalog, account, cart, and order features
 
----
+Clone the repository and install its dependencies:
 
-**© 2026 Diya.** All rights reserved.
+```bash
+git clone https://github.com/ssgopika2003/aurashop-ecommerce.git
+cd aurashop-ecommerce
+corepack enable
+corepack pnpm install --frozen-lockfile
+```
+
+Create a local environment file from the sample (`Copy-Item .env.sample .env.local` in PowerShell, or `cp .env.sample .env.local` in macOS/Linux). Set `DATABASE_URL` to a PostgreSQL database and configure the credentials for any integrations you plan to use. Keep secrets out of git. See [backend requirements](backend_requirements.md) for additional backend context.
+
+Apply the database schema and, if needed, seed data:
+
+```bash
+corepack pnpm db:push
+corepack pnpm db:seed
+```
+
+## Running Locally
+
+Start the development server:
+
+```bash
+corepack pnpm dev
+```
+
+Open [http://localhost:1408](http://localhost:1408). The application can start without a database, but catalog, product-detail, account, and checkout features need their corresponding services and configuration.
+
+For a production build, run `corepack pnpm build` followed by `corepack pnpm start`.
+
+## What I Learned
+
+- Structuring an e-commerce storefront with the Next.js App Router and reusable feature modules.
+- Modeling product variants, inventory, discounts, carts, and orders with relational data.
+- Keeping client interactions responsive while validating important cart and checkout operations on the server.
+- Integrating external services through environment-based configuration and designing layouts for multiple screen sizes.
+
+## Contributing
+
+Issues and pull requests are welcome. For a change, open an issue to discuss larger updates, keep pull requests focused, and run `corepack pnpm check-types` and `corepack pnpm lint` before submitting when practical.
+
+## License
+
+This project is available under the [MIT License](LICENSE).
